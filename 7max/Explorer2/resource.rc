@@ -1,0 +1,6 @@
+#include "../MyVersionInfo.rc"
+
+MY_VERSION_INFO_DLL("7-max Shell Extension", "7maxs")
+
+1 24 "7maxs.dll.manifest"
+

@@ -1,0 +1,26 @@
+#include "resource.h"
+#include "../../../GuiCommon.rc"
+
+#define xSize2 240
+#define ySize2 100
+#define xSize (xSize2 + marg + marg)
+#define ySize (ySize2 + marg + marg)
+
+#define bYPos (ySize - marg - bYSize)
+
+#define bXPos1 (xSize - marg - bXSize)
+#define bXPos2 (bXPos1 - 10 - bXSize)
+#define bXPos3 (bXPos2 - 10 - bXSize)
+
+IDD_OPTIONS  DIALOG  0, 0, xSize, ySize  MY_MODAL_DIALOG_STYLE
+CAPTION "Options"
+MY_FONT
+BEGIN
+  DEFPUSHBUTTON  "OK",         IDOK, bXPos3, bYPos, bXSize, bYSize, WS_GROUP
+  PUSHBUTTON     "Cancel", IDCANCEL, bXPos2, bYPos, bXSize, bYSize
+  PUSHBUTTON     "Help",     IDHELP, bXPos1, bYPos, bXSize, bYSize
+
+  LTEXT   "Minimal block size for allocating by 7-max (KB):", IDC_STATIC, marg, 24, xSize2 - 50, 8
+  EDITTEXT  IDC_OPTIONS_ALLOC_MIN, marg + xSize2 - 40, 20, 40, bYSize, ES_AUTOHSCROLL | ES_NUMBER
+  PUSHBUTTON  "Recommended values",IDC_OPTIONS_BUTTON_RECOMMENDED, marg + xSize2 - 100, 45, 100, bYSize
+END

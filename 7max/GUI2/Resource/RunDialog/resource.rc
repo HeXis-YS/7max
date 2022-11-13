@@ -1,0 +1,25 @@
+#include "resource.h"
+#include "../../../GuiCommon.rc"
+
+#define xSize2 240
+#define ySize2 62
+#define xSize (xSize2 + marg + marg)
+#define ySize (ySize2 + marg + marg)
+
+#define bYPos (ySize - marg - bYSize)
+
+#define bXPos1 (xSize - marg - bXSize)
+#define bXPos2 (bXPos1 - 10 - bXSize)
+#define bXPos3 (bXPos2 - 10 - bXSize)
+
+IDD_DIALOG_RUN  DIALOG  0, 0, xSize, ySize  MY_MODAL_DIALOG_STYLE
+CAPTION "Run"
+MY_FONT
+BEGIN
+  LTEXT           "Type the name of a program:",IDC_COMBO_STATIC, marg, marg, xSize2, 8
+  COMBOBOX        IDC_COMBO_COMBO, marg, marg + 13, xSize2, ySize2 - 13 + marg, CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+
+  DEFPUSHBUTTON  "OK",         IDOK, bXPos3, bYPos, bXSize, bYSize, WS_GROUP
+  PUSHBUTTON     "Cancel", IDCANCEL, bXPos2, bYPos, bXSize, bYSize
+  PUSHBUTTON     "&Browse...",IDC_RUN_BROWSE, bXPos1, bYPos, bXSize, bYSize
+END

@@ -1,0 +1,41 @@
+#include "../MyVersionInfo.rc"
+#include "../GuiCommon.rc"
+#include "resource.h"
+
+MY_VERSION_INFO_APP("7-max", "7max")
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+  VK_F1,   IDM_HELPTOPICS,    VIRTKEY, NOINVERT
+END
+
+
+IDM_MENU MENU
+BEGIN
+
+  POPUP "&File"
+  BEGIN
+    MENUITEM "&Run...",                     IDM_RUN
+    MENUITEM SEPARATOR
+    MENUITEM "E&xit",                       IDM_EXIT
+  END
+
+  POPUP "&Tools"
+  BEGIN
+    MENUITEM "&Options...",                 IDM_OPTIONS
+    MENUITEM "&Defragment RAM",             IDM_DEFRAG
+  END
+
+  POPUP "&Help"
+  BEGIN
+    MENUITEM "&Help Topics\tF1",            IDM_HELPTOPICS
+    MENUITEM "&About 7-max",                IDM_ABOUT
+  END
+END
+
+#include "Resource/AboutDialog/resource.rc"
+#include "Resource/OptionsDialog/resource.rc"
+#include "Resource/RunDialog/resource.rc"
+
+IDI_GUI  ICON "GUI.ICO"
+1  24  MOVEABLE PURE "7max.exe.manifest"

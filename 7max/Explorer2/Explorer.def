@@ -1,0 +1,10 @@
+; Explorer.def
+
+LIBRARY "7maxs"
+
+EXPORTS
+  DllCanUnloadNow PRIVATE
+  DllGetClassObject PRIVATE
+  DllRegisterServer PRIVATE
+  DllUnregisterServer PRIVATE
+ 
