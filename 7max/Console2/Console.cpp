@@ -60,7 +60,7 @@ void PrintError(DWORD error)
   printf(" error = %X", error);
   UString message;
   if (NError::MyFormatMessage(error, message))
-    printf(": %S", message);
+    printf(": %S", message.GetBuffer(0));
   printf("\n");
   
 }
@@ -248,12 +248,12 @@ int __cdecl main()
   }
   catch (const CSysString &s)
   {
-    printf("\nError: %s\n", UnicodeStringToMultiByte(s, CP_OEMCP));
+    printf("\nError: %s\n", UnicodeStringToMultiByte(s, CP_OEMCP).GetBuffer(0));
     return 1;
   }
   catch(const wchar_t *s)
   {
-    printf("\nError: %s\n", UnicodeStringToMultiByte(s, CP_OEMCP));
+    printf("\nError: %s\n", UnicodeStringToMultiByte(s, CP_OEMCP).GetBuffer(0));
     return 1;
   }
   catch (const char *s)

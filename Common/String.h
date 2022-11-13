@@ -52,7 +52,7 @@ inline const char* MyStringGetPrevCharPointer(const char *base, const char *p)
   { return CharPrevA(base, p); }
 
 inline char MyCharUpper(char c)
-  { return (char)(unsigned int)CharUpperA((LPSTR)(unsigned int)(unsigned char)c); }
+  { return (char)CharUpperA((LPSTR)c); }
 #ifdef _UNICODE
 inline wchar_t MyCharUpper(wchar_t c)
   { return (wchar_t)CharUpperW((LPWSTR)c); }
@@ -61,7 +61,7 @@ wchar_t MyCharUpper(wchar_t c);
 #endif
 
 inline char MyCharLower(char c)
-  { return (char)(unsigned int)CharLowerA((LPSTR)(unsigned int)(unsigned char)c); }
+  { return (char)CharLowerA((LPSTR)c); }
 #ifdef _UNICODE
 inline wchar_t MyCharLower(wchar_t c)
   { return (wchar_t)CharLowerW((LPWSTR)c); }

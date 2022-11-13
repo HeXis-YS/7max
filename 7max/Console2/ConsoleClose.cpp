@@ -52,11 +52,13 @@ CCtrlHandlerSetter::CCtrlHandlerSetter()
     throw "SetConsoleCtrlHandler fails";
 }
 
+#pragma warning(disable: 4297)
 CCtrlHandlerSetter::~CCtrlHandlerSetter()
 {
   if(!SetConsoleCtrlHandler(HandlerRoutine, FALSE))
     throw "SetConsoleCtrlHandler fails";
 }
+#pragma warning(default: 4297)
 
 void CCtrlHandlerSetter::EnableBreak(bool enable)
 {
